@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "nome": "eletricidade",
+        "medida": "Hora",
+        "valor": 300
+    },
+    {
+        "id": 2,
+        "nome": "item 1",
+        "medida": "unidade",
+        "valor": 2000
+    }
+]
