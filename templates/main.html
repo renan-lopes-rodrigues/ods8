@@ -24,34 +24,35 @@
                     <input required class="form-control" type="text" id="servico">
                 </div>
 
-                <div class="mt-2 row align-items-end justify-content-end">
+                <div class="mt-2 row align-items-end">
                     <h5>Custos</h5>
-                    <div class="col-sm-6">
-                        <label for="custos-fixos" class="form-label">
+                    <div class="col-sm-8">
+                        <label for="custos" class="form-label">
                             Selecione o custo:
                         </label>
-                        <select id="custos-fixos" class="form-control">
+                        <select id="custos" class="form-control">
                             <option value="null" disabled selected>Selecione...</option>
                             {% for custo in custos %}
-                            <option value={{custo['id']}}>{{custo['nome']}}</option>
+                            <option value="{{ custo }}">{{ custo.nome }} / {{ custo.medida }}</option>
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-3">
                         <label class="form-label" for="quantidade">Digite a quantidade:</label>
-                        <input class="form-control">
+                        <input id="quantidade" class="form-control">
                     </div>
-                    <div class="col-sm-1 d-flex">
-                        <button type="button" click="add_custo()" class="btn btn-primary">Adicionar</button>
+                    <div class="col-sm-1 mr-2">
+                        <button type="button" onclick="add_custo()" class="btn btn-primary mr-1">Adicionar</button>
                     </div>
                 </div>
 
                 <div class="d-flex mt-3 justify-content-end">
                     <button class="btn btn-lg btn-danger m-1 border" type="reset">Limpar</button>
-                    <button class="btn btn-lg btn-success m-1 border" type="submit">Calcular</button>
+                    <button class="btn btn-lg btn-success m-1 border" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">Visualizar</button>
                 </div>
 
             </form>
         </div>
+
     </body>
 </html>
